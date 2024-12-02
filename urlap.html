@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="hu">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jackson Szófia Valéria">
+    <meta name="description" content="Jelentkezési Űrlap">
+    <link rel="stylesheet" href="JacksonSzófia.css">
+    <link rel="icon" href="logok/fitvilag-se1.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Unna:wght@400;700&display=swap" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+    <script src="validálásjquery/dist/jquery.validate.js"></script>
+    <script>
+    $(document).ready(function(){
+    $("#jelentkezes").validate({
+    rules: {
+     nev: "required",
+     anyanev: "required",
+     date: "required",
+     verseny: "required",
+     email: {
+      required: true,
+      email: true},
+     tel: {
+        required: true,
+        minlength: 12},
+    tanc: {
+        required: true,
+        minlength: 1},
+     
+    },
+    messages: {
+     nev: "Írd be a táncos nevét!",
+     anyanev: " Írd be az édesanyja nevét!",
+     date: "Add meg a születési dátumod!",
+     verseny: "Válassz ki egyet!",
+     email: " Kérlek valós email címet adj meg!",
+     tel: {
+      required: " Add meg a telefonszámod!",
+      minlength: "Kérlek valós telefon számot adj meg!"
+     },
+     tanc: " Adj meg legalább egyet!"
+    },
+    });
+    });
+    </script>
+    <title>Űrlap</title>
+    <style>
+        label.error {color: #0071b5;; font-size: 1em; font-weight: bold;}
+    </style>        
+</head>
+
+<body>
+    <div class="container">
+    <header class="nomargin">
+        <img src="logok/fitvilag-se1.png" alt="logo">
+        <h1>Fitvilág SE</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Rólunk</a></li>
+            <li><a href="információ.html">Információk</a></li>
+            <li><a href="edzok.html">Edzők</a></li>
+            <li><a class="active" href="#">Jelentkezés</a></li>
+            <li><a href="fotoalbum.html">Fotóalbum</a></li>
+        </ul>
+    </nav>
+    <h1 class="cim">Jelentkezési űrlap</h1>
+    <form method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" id="jelentkezes" novalidate>
+        <table>
+            <tr class="flex">
+            <td class="reszponziv">
+            <label class="bold">Táncos neve: 
+                <input type="text" size="20" name="nev"><br>
+            </label>
+            <label class="bold">Édesanyja leánykori neve: 
+                <input type="text" size="20" name="anyanev"><br>
+            </label>
+            <label class="bold">Táncos születési dátuma:
+                <input type="date" name="szuldatum"><br>
+            </label> 
+            <label class="bold">Milyen stílusban táncolt már?<br></label>
+            <label>Kortás:<input type="checkbox" name="tanc" value="kortas"><br></label>
+            <label>Hip-Hop: <input type="checkbox" name="tanc" value="hiphop"><br></label>
+            <label>Modern: <input type="checkbox" name="tanc" value="modern"><br></label>
+            <label>Ballet: <input type="checkbox" name="tanc" value="ballet"><br></label>
+            <label>Latin: <input type="checkbox" name="tanc" value="latin"><br></label>
+            <label>Aerobik: <input type="checkbox" name="tanc" value="aerobik"><br></label>
+            <label>Szertorna: <input type="checkbox" name="tanc" value="szertorna"><br></label>
+            <label>Ritmikus Gimnasztika: <input type="checkbox" name="tanc" value="rg"><br></label>
+            <label>Egyéb: <input type="checkbox" name="tanc" value="egyeb"><br></label>
+            </td>
+            <td class="oszlop reszponziv">
+                <label class="bold">Versenyzett már?<br>
+                    <select size="2" name="verseny">
+                        <option value="igen">Igen</option>
+                        <option value="nem">Nem</option>
+                    </select>
+                <br>
+                </label>
+                <label class="bold">Táncos vagy szülő email címe:
+                    <input type="email" name="email" placeholder="gipszjakab@gmail.com"><br>
+                </label>
+                <label class="bold">Táncos vagy szülő telefonszáma: 
+                    <input type="tel" size="20" name="tel" placeholder="+36"><br>
+                </label>
+                <label> Bármi más információ, amiről szeretne, hogy tudjunk: <br>
+                    <textarea rows="7" cols="45" name="egyeb"></textarea><br>
+                </label>
+            </td>
+            </tr>
+            <tr>
+            <td colspan="2" class="kozep">
+                <input type="submit" value="Elküldés" class="gomb">
+                <input type="reset" value="Alaphelyzet" class="gomb">
+            </td>
+            </tr>
+            </table>
+    </form>
+    </div>
+    <footer>
+        <p>Email: mohos.edit@gmail.com  |  Telefonszám: +36 30 221 1853</p>
+    </footer>
+</body>
+
+</html>

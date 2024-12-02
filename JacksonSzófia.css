@@ -1,0 +1,141 @@
+/*mobile first*/
+
+/*összes*/
+*{box-sizing: border-box;}
+
+html{margin: 0;padding: 0;}
+
+body{padding: 0px; margin: 0px; background-color:#bddee3; font-family: "Unna";}
+
+.container {display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: space-around;}
+.container>* {height: fit-content;margin: 1%;}
+
+/*header*/
+header{background-color: white; padding: 0px; margin: 0px; height: 200px!important; ;display: flex; }
+header h1{margin: 0; padding: 8px; font-size: 4em; text-align: center; color:#0071b5;
+    display: flex; flex-basis: 73%; justify-content: center; align-items: center;}
+
+img{height: auto;
+    margin-top: 2px;
+    margin-left: 2px; 
+    width: 200px ;
+    display: flex;}
+
+.nomargin{display: flex;height: fit-content;margin: 0%;}
+
+/*főszöveg*/
+article{flex: 1 1 100%;
+    padding: 8px;
+    background-color: #C6DE68;
+    border-radius: 15px;
+    color: black;
+    text-align: center;
+    font-size: 1.7em;}
+
+/*menű*/
+nav {padding: 8px;flex: 1 1 100%;}
+
+nav ul {list-style-type: none; margin: 0; padding: 0;}
+
+nav li a {text-decoration: none;
+    display: block;
+    padding: 10px;
+    margin-bottom: 12px;
+    color: white;
+    font-size: 1.5em;
+    background-color:#00bbd6;
+    border-radius: 15px;
+    text-align: center;}
+
+nav ul li a.active { border: 3px solid #0071b5;}
+nav li a:hover {background-color:#0071b5; transition: ease-in 0.4s;}
+
+/*helyszín*/
+aside{flex: 1 1 100%;
+    background-color:#00bbd6;
+    border: 3px solid #0071b5;
+    padding: 15px;
+    color:white;
+    text-align: center;
+    font-size: 2em;
+    border-radius: 15px;}
+
+/*email*/
+footer{background-color:#0071b5;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 5px;}
+
+/*egyéb*/
+.bold{font-weight: bold;}
+.art{background-color:#bddee3}
+.balra{text-align: left;}
+.kisebb{font-size: 0.8em;}
+
+/*urlap*/
+.cim{text-align: center; font-weight: bold;}
+form{margin: 20px;}
+
+.gomb {background:linear-gradient(to bottom, #C6DE68 5%, #b2d235 100%);
+        background-color:#C6DE68;
+        border-radius:12px;
+        border:1px solid #6d6e6e;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-size:1em;
+        font-weight:bold;
+        padding:6px 24px;
+        text-shadow:0px 1px 0px #86ae47;}
+.gomb:hover {background:linear-gradient(to bottom, #b2d235 5%, #C6DE68 100%);
+            background-color:#C6DE68;}
+.kozep{display: flex; justify-content: center;}
+table {width:100%;
+        table-layout: fixed;
+        display: flex;}
+label{font-size:1.2em;}
+.oszlop{vertical-align:top;}
+.reszponziv{display: flex; flex-direction: column;}
+
+/*edzok*/
+.doboz{display:flex; height: 150px; border-radius: 110px 0px 0px 110px; flex-basis: 100%;}
+.edzokep{display: flex; width: 150px;}
+.edzoszoveg{display: flex;flex-basis: 73%; justify-content: center; align-items: center;
+font-size: 1em;}
+
+/*rólunk oldal*/
+.kep{display: flex; flex-basis:100%; width: 350px;}
+
+/*információk oldal*/
+/*térkép*/
+.terkep{width:310px ;height:250px;}
+/*elérhetőségek*/
+.logo{width: 50px !important;float: left; width: 33.33%;}
+/*fotoalbum*/
+.cime{font-size: 1.5em;}
+
+/*javascripthez*/
+.szam{font-weight: bold; font-size: 40px;}
+
+@media only screen and (min-width: 600px){
+    nav ul{display: flex; flex-direction: row; justify-content: space-evenly;}
+    nav li { flex-basis: 15%;}
+    .reszponziv{display: flex;flex-basis: 50%; flex-direction: column; justify-content:center;}
+    .flex{display: flex;}
+    .kep{float: right; width: 250px;}
+    .terkep{width:450px; height:300px;}
+    header h1{font-size: 5em;}
+
+}
+
+@media only screen and (min-width: 768px){
+    nav ul{display: flex; flex-direction: row; justify-content: space-evenly;}
+    nav li {flex-basis: 15%;}
+    .reszponziv{display: flex; flex-basis: 50%;flex-direction: column;justify-content:center;}
+    .flex{display: flex;}
+    .kep{float: right; width: 250px;}
+    .terkep{width:600px ;height:450px;}
+    header h1{font-size: 6em;}
+    
+}
